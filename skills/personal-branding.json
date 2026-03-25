@@ -1,20 +1,42 @@
 {
   "id": "personal-branding",
-  "name": "Personal Branding",
-  "description": "Generate a personal positioning statement and content angles.",
+  "name": "Personal Branding Architect",
+  "description": "Generate a crisp positioning statement and highly tailored content angles.",
   "inputs": [
     {
-      "id": "whatDoYouDo",
-      "label": "What do you do?",
-      "type": "textarea",
-      "placeholder": "Describe your profession, skills, and current role..."
+      "id": "role",
+      "label": "What is your core profession?",
+      "type": "text",
+      "placeholder": "e.g., Indie Hacker, Design Engineer, Copywriter..."
     },
     {
-      "id": "targetAudience",
-      "label": "Target Audience",
-      "type": "text",
-      "placeholder": "Who are you trying to reach?"
+      "id": "vibe",
+      "label": "Brand Tone & Vibe",
+      "type": "radio",
+      "options": [
+        { "label": "Authoritative", "value": "authoritative and direct" },
+        { "label": "Playful", "value": "playful and contrarian" },
+        { "label": "Zen", "value": "minimalist and zen" },
+        { "label": "Technical", "value": "highly technical" }
+      ]
+    },
+    {
+      "id": "audience",
+      "label": "Primary Audience",
+      "type": "select",
+      "options": [
+        { "label": "Other Founders / Indie Hackers", "value": "Other Founders" },
+        { "label": "Enterprise Decision Makers", "value": "Enterprise Buyers" },
+        { "label": "Junior Developers / Creatives", "value": "Juniors in my field" },
+        { "label": "General Public / Consumers", "value": "General Public" }
+      ]
+    },
+    {
+      "id": "uniqueAngle",
+      "label": "Your Unique Angle (Optional)",
+      "type": "textarea",
+      "placeholder": "What do you believe that others in your industry disagree with?"
     }
   ],
-  "promptTemplate": "You are an expert personal branding consultant. Help position this individual.\n\nWhat they do: {{whatDoYouDo}}\nTarget Audience: {{targetAudience}}\n\nCreate a positioning statement, define the audience, and suggest content angles. Return ONLY a valid JSON object. Do not include any text before or after the JSON. The JSON keys must be exactly: \"Positioning Statement\", \"Audience Definition\", and \"Content Angles\". The value for \"Content Angles\" must be an array of strings (3-5 ideas). The others must be strings."
+  "promptTemplate": "You are a master personal branding consultant formatting data for an aggressive, sleek execution engine. \n\nMy Profession: {{role}}\nBrand Tone: {{vibe}}\nTarget Audience: {{audience}}\nMy Unique/Contrarian Angle: {{uniqueAngle}}\n\nGiven this information, formulate a precise positioning statement, define exactly why the audience cares, and suggest 4 high-converting content angles that match my chosen vibe. Return ONLY a valid JSON object. Do not include markdown formatting like ```json or trailing text. The JSON keys MUST BE exactly: \"Positioning Statement\", \"Audience Hook (Why they care)\", and \"4 Killer Content Angles\". The value for \"4 Killer Content Angles\" must be an array of strings."
 }

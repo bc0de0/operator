@@ -56,13 +56,45 @@ const app = {
       let field;
       if (input.type === 'textarea') {
         field = document.createElement('textarea');
+        field.id = input.id;
+        field.placeholder = input.placeholder || '';
+        field.required = true;
+      } else if (input.type === 'select') {
+        field = document.createElement('select');
+        field.id = input.id;
+        if (input.options) {
+          input.options.forEach(opt => {
+            const option = document.createElement('option');
+            option.value = opt.value;
+            option.textContent = opt.label;
+            field.appendChild(option);
+          });
+        }
+      } else if (input.type === 'radio') {
+        field = document.createElement('div');
+        field.className = 'pill-group';
+        field.id = input.id;
+        if (input.options && input.options.length > 0) {
+          field.dataset.value = input.options[0].value;
+          input.options.forEach((opt, idx) => {
+            const pill = document.createElement('div');
+            pill.className = 'pill' + (idx === 0 ? ' active' : '');
+            pill.textContent = opt.label;
+            pill.onclick = () => {
+              field.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+              pill.classList.add('active');
+              field.dataset.value = opt.value;
+            };
+            field.appendChild(pill);
+          });
+        }
       } else {
         field = document.createElement('input');
         field.type = input.type || 'text';
+        field.id = input.id;
+        field.placeholder = input.placeholder || '';
+        field.required = true;
       }
-      field.id = input.id;
-      field.placeholder = input.placeholder || '';
-      field.required = true;
       group.appendChild(field);
       
       formInputs.appendChild(group);
@@ -84,7 +116,12 @@ const app = {
     
     const inputs = {};
     this.currentSkill.inputs.forEach(input => {
-      inputs[input.id] = document.getElementById(input.id).value;
+      const el = document.getElementById(input.id);
+      if (input.type === 'radio') {
+        inputs[input.id] = el.dataset.value;
+      } else {
+        inputs[input.id] = el.value;
+      }
     });
     
     let prompt = this.currentSkill.promptTemplate;

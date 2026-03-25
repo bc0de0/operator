@@ -1,14 +1,25 @@
 {
   "id": "angle-matrix",
   "name": "The Angle Matrix",
-  "description": "Generate 5 distinctly different creative angles for any topic.",
+  "description": "Dynamically generate 5 distinct creative angles formatted for specific platforms.",
   "inputs": [
     {
       "id": "topic",
-      "label": "What is the topic?",
-      "type": "textarea",
-      "placeholder": "e.g., The psychology of pricing..."
+      "label": "Core Content Topic",
+      "type": "text",
+      "placeholder": "e.g., The psychology of SaaS pricing"
+    },
+    {
+      "id": "platform",
+      "label": "Target Platform Context",
+      "type": "radio",
+      "options": [
+        { "label": "Twitter / X (Punchy)", "value": "Twitter thread" },
+        { "label": "LinkedIn (Story)", "value": "LinkedIn post" },
+        { "label": "Blog / Newsletter", "value": "Long-form newsletter" },
+        { "label": "YouTube Script", "value": "YouTube video script" }
+      ]
     }
   ],
-  "promptTemplate": "You are a master content strategist. I have a topic idea: {{topic}}.\n\nTake this topic and generate exactly 5 distinct angles to talk or write about it. Return ONLY a valid JSON object. Do not include markdown formatting like ```json or trailing text. The JSON keys must be exactly: \"The Controversial Take\", \"The Story-Driven Hook\", \"The Step-by-Step Guide\", \"The Analytical Deep-Dive\", and \"The Myth-Buster\". The values should be short, punchy paragraphs executing that specific angle."
+  "promptTemplate": "You are a masterful content strategist. I want to talk about: {{topic}}. I am writing specifically for: {{platform}}.\n\nTake this topic and generate exactly 5 distinct angles optimized perfectly for the chosen platform format. Return ONLY a valid JSON object. Do not include markdown formatting or trailing text. The JSON keys must be exactly: \"The Controversial Take\", \"The Story Hook\", \"The Tactical Guide\", \"The Deep-Dive\", and \"The Myth-Buster\". The values MUST be perfectly styled paragraphs fitting the platform vibe."
 }

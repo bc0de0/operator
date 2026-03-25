@@ -1,0 +1,14 @@
+{
+  "id": "devils-advocate",
+  "name": "Devil's Advocate",
+  "description": "Stress-test a new creative idea or thesis.",
+  "inputs": [
+    {
+      "id": "idea",
+      "label": "Your Idea or Thesis",
+      "type": "textarea",
+      "placeholder": "What are you trying to build or argue?"
+    }
+  ],
+  "promptTemplate": "You are a brilliant, hyper-critical editor and strategist. Analyze this idea: {{idea}}.\n\nFind the flaws, cliches, and opportunities. Return ONLY a valid JSON object. Do not include markdown formatting or trailing text. The JSON keys must be exactly: \"Strongest Counter-Argument\", \"The Cliché to Avoid\", and \"How to Make It 10x More Unique\". The value for each should be a single, brutal, and constructive paragraph."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "angle-matrix",
+  "name": "The Angle Matrix",
+  "description": "Generate 5 distinctly different creative angles for any topic.",
+  "inputs": [
+    {
+      "id": "topic",
+      "label": "What is the topic?",
+      "type": "textarea",
+      "placeholder": "e.g., The psychology of pricing..."
+    }
+  ],
+  "promptTemplate": "You are a master content strategist. I have a topic idea: {{topic}}.\n\nTake this topic and generate exactly 5 distinct angles to talk or write about it. Return ONLY a valid JSON object. Do not include markdown formatting like ```json or trailing text. The JSON keys must be exactly: \"The Controversial Take\", \"The Story-Driven Hook\", \"The Step-by-Step Guide\", \"The Analytical Deep-Dive\", and \"The Myth-Buster\". The values should be short, punchy paragraphs executing that specific angle."
+}

@@ -1,20 +1,20 @@
 # ⚙️ Operator
 
-> **The lightweight, AI-agnostic desktop tool for structured execution.**
+> **The Anti-Chatbot for Creatives & Makers.**
 
-**Operator** isn't another open-ended AI chatbot. It's an execution engine for founders, marketers, and operators who need structured, predictable output from LLMs. By defining decision workflows as simple local JSON files ("Skills"), Operator transforms sprawling AI conversations into a clean, one-click, forms-based desktop application.
+**Operator** isn't another open-ended AI wrapper. It's a deterministic execution engine for people who are exhausted by noisy chatbots, black-box autonomous agents, and massive enterprise subscriptions. By defining decision workflows as simple local JSON files ("Skills"), Operator transforms sprawling AI conversations into clean, one-click, offline-first native applications.
 
 No subscriptions. No cloud databases. Just your API keys and your workflows, running blazingly fast on your local machine.
 
 ---
 
-## ✨ Why this exists (The Philosophy)
+## ✨ The Philosophy (Why we built this)
 
-Most professionals waste hours engineering prompts every time they need to make a decision or draft copy. Chatbots are great for brainstorming, but terrible for repeatable, structured workflows.
+There is serious AI fatigue right now. The industry is flooded with overly complex autonomous agents that act as "black-boxes," or conversational UIs that require you to endlessly re-engineer prompts. Creatives and founders hate this because it destroys their agency. You don't want AI to do all your work for you in the background—you want to push a button to unblock a structured thought process and get back in the flow.
 
 Operator solves this by turning **prompts into software**.
 
-Whether you're a founder auditing a new market (Startup Evaluation), or a marketer generating a positioning framework (Brand Architect), Operator forces models like **OpenAI** and **Claude** to output strictly formatted, actionable data. It acts as a local operating system for your best mental models.
+Instead of staring at a blank chat interface, you load Operator. You pick a "Skill" (like *The Angle Matrix* or *Startup Evaluator*), fill out a structured form, and get **deterministic, flawlessly formatted data** back. Operator is an opinionated, unbundled tool for people who want to stay Pilots of their own work.
 
 ## 🚀 Core Features
 

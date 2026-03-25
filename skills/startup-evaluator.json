@@ -1,0 +1,20 @@
+{
+  "id": "startup-evaluator",
+  "name": "Startup Evaluator",
+  "description": "Evaluate a startup idea and identify risks and next steps.",
+  "inputs": [
+    {
+      "id": "idea",
+      "label": "Idea",
+      "type": "textarea",
+      "placeholder": "Describe your startup idea..."
+    },
+    {
+      "id": "targetUser",
+      "label": "Target User",
+      "type": "text",
+      "placeholder": "Who is the primary target user?"
+    }
+  ],
+  "promptTemplate": "You are a pragmatic, experienced startup operator. Evaluate this startup idea.\n\nIdea: {{idea}}\nTarget User: {{targetUser}}\n\nAnalyze the idea critically. Return ONLY a valid JSON object. Do not include any text before or after the JSON. The JSON keys must be exactly: \"Decision\", \"Why\", \"Risks\", and \"Next Steps\". The values for \"Risks\" and \"Next Steps\" must be arrays of strings. The value for \"Decision\" should be either \"Strong\" or \"Weak\". The value for \"Why\" should be a single string explaining the decision."
+}

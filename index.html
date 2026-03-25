@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'; form-action 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
+  <title>Operator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Operator</h1>
+    <div class="header-controls">
+      <select id="model-selector">
+        <option value="openai">OpenAI (GPT-4o)</option>
+        <option value="claude">Claude (Sonnet 3.5)</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="app-container">
+    <!-- View 1: Skill Selection -->
+    <div id="view-skills" class="view active">
+      <p class="subtitle">Select a skill to begin.</p>
+      <div id="skills-grid" class="skills-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- View 2: Input Form -->
+    <div id="view-input" class="view">
+      <button class="back-btn" onclick="app.showSkills()">← Back</button>
+      <h2 id="skill-title">Skill Title</h2>
+      <p id="skill-description" class="subtitle">Description</p>
+      
+      <form id="skill-form">
+        <div id="form-inputs"></div>
+        <button type="submit" class="btn primary">Run Analysis</button>
+      </form>
+    </div>
+
+    <!-- View 3: Loading -->
+    <div id="view-loading" class="view center-content">
+      <div class="spinner"></div>
+      <p>Thinking like an operator...</p>
+    </div>
+
+    <!-- View 4: Output -->
+    <div id="view-output" class="view">
+      <div class="output-header">
+        <button class="back-btn" onclick="app.showSkills()">← Back to Skills</button>
+        <button class="btn secondary" onclick="app.copyOutput()">Copy to Clipboard</button>
+      </div>
+      <div id="output-content" class="output-content">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

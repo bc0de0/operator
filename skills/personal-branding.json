@@ -1,0 +1,20 @@
+{
+  "id": "personal-branding",
+  "name": "Personal Branding",
+  "description": "Generate a personal positioning statement and content angles.",
+  "inputs": [
+    {
+      "id": "whatDoYouDo",
+      "label": "What do you do?",
+      "type": "textarea",
+      "placeholder": "Describe your profession, skills, and current role..."
+    },
+    {
+      "id": "targetAudience",
+      "label": "Target Audience",
+      "type": "text",
+      "placeholder": "Who are you trying to reach?"
+    }
+  ],
+  "promptTemplate": "You are an expert personal branding consultant. Help position this individual.\n\nWhat they do: {{whatDoYouDo}}\nTarget Audience: {{targetAudience}}\n\nCreate a positioning statement, define the audience, and suggest content angles. Return ONLY a valid JSON object. Do not include any text before or after the JSON. The JSON keys must be exactly: \"Positioning Statement\", \"Audience Definition\", and \"Content Angles\". The value for \"Content Angles\" must be an array of strings (3-5 ideas). The others must be strings."
+}
